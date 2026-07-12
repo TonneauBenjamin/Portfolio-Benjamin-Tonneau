@@ -120,15 +120,9 @@
   .ic:hover{color:var(--blue);background:var(--blue-soft);transform:translateY(-1px)}
   .ic svg{width:16px;height:16px}
 
-  .theme{display:flex;gap:6px;padding-left:12px;margin-left:6px;border-left:1px solid var(--rule)}
-  .theme button{
-    all:unset;cursor:pointer;width:15px;height:15px;border-radius:3px;
-    box-shadow:0 0 0 1px var(--rule);transition:box-shadow .22s ease,transform .22s ease;
-  }
-  .theme button:hover{transform:translateY(-1px)}
-  .theme button[aria-pressed="true"]{box-shadow:0 0 0 1px var(--paper),0 0 0 3px var(--blue)}
-  .sw-light{background:linear-gradient(135deg,#0A3FE0 50%,#FFFFFF 50%)}
-  .sw-dark{background:linear-gradient(135deg,#3D6BFF 50%,#08090C 50%)}
+  .theme{display:flex;padding-left:8px;margin-left:4px;border-left:1px solid var(--rule)}
+  html[data-theme="light"] .i-sun{display:none}
+  html[data-theme="dark"]  .i-moon{display:none}
 
   .lang{display:flex;gap:2px;padding-left:12px;margin-left:6px;border-left:1px solid var(--rule)}
   .lang button{
@@ -416,9 +410,11 @@
       </a>
     </div>
 
-    <div class="theme" role="group" aria-label="Theme">
-      <button type="button" class="sw-light" data-theme-set="light" aria-pressed="true"  title="Light" aria-label="Light"></button>
-      <button type="button" class="sw-dark"  data-theme-set="dark"  aria-pressed="false" title="Dark"  aria-label="Dark"></button>
+    <div class="theme">
+      <button type="button" class="ic" id="themeBtn" aria-label="Switch to dark theme" title="Theme">
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.4 14.9A8.5 8.5 0 1 1 9.1 3.6a6.6 6.6 0 0 0 11.3 11.3z"/></svg>
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.2v2M12 19.8v2M4.4 4.4l1.5 1.5M18.1 18.1l1.5 1.5M2.2 12h2M19.8 12h2M4.4 19.6l1.5-1.5M18.1 5.9l1.5-1.5"/></svg>
+      </button>
     </div>
 
     <div class="lang" role="group" aria-label="Language">
@@ -563,6 +559,36 @@
       <article class="p">
         <div class="p-head">
           <div>
+            <h3 lang="en">CDataframe — a DataFrame library written in C</h3>
+            <h3 lang="fr">CDataframe — une librairie DataFrame écrite en C</h3>
+            <p class="stack">C · Dynamic memory · Data structures</p>
+          </div>
+          <a class="repo" href="https://github.com/TonneauBenjamin/CDataframe" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.1-.4-.6-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.1 0 4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+            <span>CDataframe</span>
+          </a>
+        </div>
+        <ul>
+          <li lang="en">Rebuilt the thing I use every day, one level down: columns that grow by reallocation, a dataframe that owns them, and every byte freed by hand.</li>
+          <li lang="en">Column operations on top: value at a position, occurrence counts, how many values sit above or below a threshold. Then an interactive CLI to load and print the frame.</li>
+          <li lang="en">Written in a pair with Thibaud Boulmier. It taught me what Pandas is hiding.</li>
+          <li lang="fr">Reconstruction de l'outil que j'utilise tous les jours, un étage plus bas : des colonnes qui grandissent par réallocation, un dataframe qui les possède, et chaque octet libéré à la main.</li>
+          <li lang="fr">Par-dessus, les opérations de colonne : valeur à une position, comptage d'occurrences, nombre de valeurs au-dessus ou en dessous d'un seuil. Puis une CLI interactive pour remplir et afficher la structure.</li>
+          <li lang="fr">Écrit en binôme avec Thibaud Boulmier. Ce projet m'a appris ce que Pandas me cachait.</li>
+        </ul>
+        <div class="pipe">
+          <span class="st">malloc</span><span class="arw">→</span>
+          <span class="st">COLUMN</span><span class="arw">→</span>
+          <span class="st">CDATAFRAME</span><span class="arw">→</span>
+          <span class="st"><span lang="en">Aggregates</span><span lang="fr">Agrégats</span></span><span class="arw">→</span>
+          <span class="st">free</span>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="p">
+        <div class="p-head">
+          <div>
             <h3 lang="en">Responsible virtual radiologist assistant</h3>
             <h3 lang="fr">Assistant radiologue virtuel responsable</h3>
             <p class="stack">Python · PyTorch · MedGemma · Streamlit</p>
@@ -670,6 +696,35 @@
       <article class="p">
         <div class="p-head">
           <div>
+            <h3 lang="en">The transportation problem — solvers and complexity</h3>
+            <h3 lang="fr">Le problème de transport — solveurs et complexité</h3>
+            <p class="stack">Python · Operations research · Graph theory</p>
+          </div>
+          <a class="repo" href="https://github.com/TonneauBenjamin/Projet-Recherche-OP" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.1-.4-.6-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.1 0 4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+            <span>Recherche-OP</span>
+          </a>
+        </div>
+        <ul>
+          <li lang="en">Two ways to get a first feasible plan: the North-West corner rule, and Balas-Hammer, which ranks rows and columns by the penalty you pay for avoiding their cheapest cell.</li>
+          <li lang="en">Then the stepping-stone method drives it to optimality, with breadth-first traversals of the bipartite basis graph checking that it stays acyclic and connected.</li>
+          <li lang="en">Twelve problem instances, execution traces per heuristic, and a measured complexity curve rather than an asserted one.</li>
+          <li lang="fr">Deux façons d'obtenir une première proposition réalisable : la règle du coin nord-ouest, et Balas-Hammer, qui classe lignes et colonnes par la pénalité payée si l'on évite leur case la moins chère.</li>
+          <li lang="fr">Le marche-pied conduit ensuite la solution à l'optimum, avec des parcours en largeur du graphe biparti de la base pour vérifier qu'elle reste acyclique et connexe.</li>
+          <li lang="fr">Douze instances, des traces d'exécution par heuristique, et une courbe de complexité mesurée plutôt qu'affirmée.</li>
+        </ul>
+        <div class="pipe">
+          <span class="st"><span lang="en">Instance</span><span lang="fr">Instance</span></span><span class="arw">→</span>
+          <span class="st">Balas-Hammer</span><span class="arw">→</span>
+          <span class="st">BFS</span><span class="arw">→</span>
+          <span class="st"><span lang="en">Stepping-stone</span><span lang="fr">Marche-pied</span></span><span class="arw">→</span>
+          <span class="st"><span lang="en">Complexity</span><span lang="fr">Complexité</span></span>
+        </div>
+      </article>
+
+      <article class="p">
+        <div class="p-head">
+          <div>
             <h3 lang="en">Finite automata toolkit</h3>
             <h3 lang="fr">Boîte à outils pour automates finis</h3>
             <p class="stack">Python</p>
@@ -716,21 +771,37 @@
         </div>
       </article>
 
+      <!-- 8 -->
+      <article class="p">
+        <div class="p-head">
+          <div>
+            <h3 lang="en">Rover navigation on cost-weighted terrain</h3>
+            <h3 lang="fr">Navigation d'un rover sur terrain à coûts</h3>
+            <p class="stack">C · N-ary trees</p>
+          </div>
+          <a class="repo" href="https://github.com/TonneauBenjamin/Projet-Rover" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.1-.4-.6-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.1 0 4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+            <span>Projet-Rover</span>
+          </a>
+        </div>
+        <ul>
+          <li lang="en">A rover crosses a map where every soil type charges a different price for the same move. Each phase builds an N-ary tree of reachable futures and picks the cheapest branch.</li>
+          <li lang="en">Handles crevasses, leaving the map, arriving at the base station, and generating random maps to test against. Written in C with Victor Proffit and Arthur Boutelier.</li>
+          <li lang="fr">Un rover traverse une carte où chaque type de sol facture un prix différent pour le même mouvement. Chaque phase construit un arbre N-aire des futurs atteignables et retient la branche la moins coûteuse.</li>
+          <li lang="fr">Gère les crevasses, la sortie de carte, l'arrivée à la station de base, et la génération de cartes aléatoires pour les tests. Écrit en C avec Victor Proffit et Arthur Boutelier.</li>
+        </ul>
+        <div class="pipe">
+          <span class="st"><span lang="en">Map</span><span lang="fr">Carte</span></span><span class="arw">→</span>
+          <span class="st"><span lang="en">N-ary tree</span><span lang="fr">Arbre N-aire</span></span><span class="arw">→</span>
+          <span class="st"><span lang="en">Cheapest branch</span><span lang="fr">Branche minimale</span></span><span class="arw">→</span>
+          <span class="st"><span lang="en">Move</span><span lang="fr">Déplacement</span></span><span class="arw">→</span>
+          <span class="st"><span lang="en">Base station</span><span lang="fr">Station de base</span></span>
+        </div>
+      </article>
+
       <div class="more">
         <span class="mono tiny" lang="en">Also public:</span>
         <span class="mono tiny" lang="fr">Également publics :</span>
-        <a href="https://github.com/TonneauBenjamin/CDataframe" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.1-.4-.6-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.1 0 4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
-          CDataframe <span class="tiny">· C</span>
-        </a>
-        <a href="https://github.com/TonneauBenjamin/Projet-Rover" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.1-.4-.6-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.1 0 4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
-          Projet-Rover <span class="tiny">· C</span>
-        </a>
-        <a href="https://github.com/TonneauBenjamin/Projet-Recherche-OP" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.1-.4-.6-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.1 0 4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
-          Projet-Recherche-OP <span class="tiny">· Python</span>
-        </a>
         <a href="https://github.com/TonneauBenjamin/Python-Chatbot" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.1-.4-.6-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.1 0 4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
           Python-Chatbot <span class="tiny">· Python</span>
@@ -967,16 +1038,15 @@
 <script>
 const root = document.documentElement;
 
-/* ---------- theme: light or dark, same black/white/blue ---------- */
+/* ---------- theme: one toggle, light or dark, same black/white/blue ---------- */
+const themeBtn = document.getElementById('themeBtn');
 function setTheme(name){
   root.setAttribute('data-theme', name);
-  document.querySelectorAll('.theme button').forEach(b=>{
-    b.setAttribute('aria-pressed', String(b.dataset.themeSet === name));
-  });
+  themeBtn.setAttribute('aria-label', name === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
   /* Once hosted, remember it:  localStorage.setItem('theme', name); */
 }
-document.querySelectorAll('.theme button').forEach(b=>{
-  b.addEventListener('click', ()=> setTheme(b.dataset.themeSet));
+themeBtn.addEventListener('click', ()=>{
+  setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
 });
 /* Once hosted, replace with:
    setTheme(localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')); */
