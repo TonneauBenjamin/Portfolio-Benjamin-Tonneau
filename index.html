@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-lang="en" data-theme="light">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,30 +15,6 @@
      Two modes, same three colours, inverted surfaces.
      ================================================================ */
   :root{
-    --paper:#FFFFFF;
-    --paper-2:#F1F4FA;
-    --ink:#08090C;
-    --on-ink:#FFFFFF;
-    --muted:#5A6376;
-    --blue:#0A3FE0;
-    --blue-soft:rgba(10,63,224,.08);
-    --blue-line:rgba(10,63,224,.35);
-    --blue-glow:rgba(10,63,224,.30);
-    --rule:rgba(8,9,12,.13);
-    --tag-border:rgba(8,9,12,.20);
-    --top-bg:rgba(255,255,255,.85);
-    --dash:rgba(255,255,255,.6);
-
-    --display:"Familjen Grotesk",system-ui,sans-serif;
-    --body:"Public Sans",system-ui,sans-serif;
-    --mono:"JetBrains Mono",ui-monospace,monospace;
-
-    --gut:clamp(20px,4vw,64px);
-    --max:1160px;
-    --rail:196px;
-  }
-
-  html[data-theme="dark"]{
     --paper:#08090C;
     --paper-2:#101218;
     --ink:#F2F4F8;
@@ -52,6 +28,14 @@
     --tag-border:rgba(255,255,255,.20);
     --top-bg:rgba(8,9,12,.85);
     --dash:rgba(255,255,255,.75);
+
+    --display:"Familjen Grotesk",system-ui,sans-serif;
+    --body:"Public Sans",system-ui,sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,monospace;
+
+    --gut:clamp(20px,4vw,64px);
+    --max:1160px;
+    --rail:196px;
   }
 
   *{box-sizing:border-box}
@@ -120,9 +104,6 @@
   .ic:hover{color:var(--blue);background:var(--blue-soft);transform:translateY(-1px)}
   .ic svg{width:16px;height:16px}
 
-  .theme{display:flex;padding-left:8px;margin-left:4px;border-left:1px solid var(--rule)}
-  html[data-theme="light"] .i-sun{display:none}
-  html[data-theme="dark"]  .i-moon{display:none}
 
   .lang{display:flex;gap:2px;padding-left:12px;margin-left:6px;border-left:1px solid var(--rule)}
   .lang button{
@@ -410,12 +391,6 @@
       </a>
     </div>
 
-    <div class="theme">
-      <button type="button" class="ic" id="themeBtn" aria-label="Switch to dark theme" title="Theme">
-        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.4 14.9A8.5 8.5 0 1 1 9.1 3.6a6.6 6.6 0 0 0 11.3 11.3z"/></svg>
-        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.2v2M12 19.8v2M4.4 4.4l1.5 1.5M18.1 18.1l1.5 1.5M2.2 12h2M19.8 12h2M4.4 19.6l1.5-1.5M18.1 5.9l1.5-1.5"/></svg>
-      </button>
-    </div>
 
     <div class="lang" role="group" aria-label="Language">
       <button type="button" data-set="en" aria-pressed="true">EN</button>
@@ -1037,20 +1012,6 @@
 
 <script>
 const root = document.documentElement;
-
-/* ---------- theme: one toggle, light or dark, same black/white/blue ---------- */
-const themeBtn = document.getElementById('themeBtn');
-function setTheme(name){
-  root.setAttribute('data-theme', name);
-  themeBtn.setAttribute('aria-label', name === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
-  /* Once hosted, remember it:  localStorage.setItem('theme', name); */
-}
-themeBtn.addEventListener('click', ()=>{
-  setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
-});
-/* Once hosted, replace with:
-   setTheme(localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')); */
-setTheme(matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
 /* ---------- language ---------- */
 function setLang(code){
