@@ -5,7 +5,7 @@
 %-------------------------------------------------------------------
 \documentclass[10pt,a4paper]{article}
 
-\usepackage[top=0.8cm,bottom=0.8cm,left=1.35cm,right=1.35cm]{geometry}
+\usepackage[top=1.0cm,bottom=0.9cm,left=1.4cm,right=1.4cm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \IfFileExists{lmodern.sty}{\usepackage{lmodern}}{}
@@ -16,15 +16,15 @@
 
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
-\linespread{0.98}
+\linespread{1.0}
 
-\titleformat{\section}{\large\bfseries}{}{0em}{\MakeUppercase}[\vspace{1.5pt}\titlerule]
-\titlespacing*{\section}{0pt}{2pt}{2pt}
+\titleformat{\section}{\large\bfseries}{}{0em}{\MakeUppercase}[\vspace{2pt}\titlerule]
+\titlespacing*{\section}{0pt}{1pt}{2.5pt}
 
-\setlist[itemize]{leftmargin=1.25em, itemsep=0.5pt, parsep=0pt, topsep=1pt, label=\textbullet}
+\setlist[itemize]{leftmargin=1.3em, itemsep=1pt, parsep=0pt, topsep=1pt, label=\textbullet}
 
 \newcommand{\secgap}{\vspace{\stretch{1}}}
-\newcommand{\itemgap}{\vspace{\stretch{0.3}}}
+\newcommand{\itemgap}{\vspace{\stretch{0.35}}}
 
 % \job{Title}{Dates}{Organization}{Location}
 \newcommand{\job}[4]{%
@@ -54,10 +54,10 @@ Engineering student (4th year) focused on data, with hands-on experience in real
 \secgap
 %-------------------- SKILLS --------------------
 \section{Skills}
-\textbf{Programming \& querying:} Python, SQL (query optimization), ClickHouse, C, Java, HTML/CSS/JavaScript, MATLAB\\[1.5pt]
-\textbf{Data analysis \& ML:} Pandas, NumPy, SciPy, Scikit-learn, PyTorch, deep learning (CNN, MLP), clustering, anomaly detection, statistical modeling\\[1.5pt]
-\textbf{Data engineering:} ETL, Apache Spark (Structured Streaming, batch), Apache Kafka, Apache Airflow, Parquet, MySQL, relational modeling (ERD)\\[1.5pt]
-\textbf{Visualization \& reporting:} Power BI, Matplotlib, Seaborn, Plotly, Streamlit, Excel\\[1.5pt]
+\textbf{Programming \& querying:} Python, SQL (query optimization), ClickHouse, C, Java, HTML/CSS/JavaScript, MATLAB\\[2pt]
+\textbf{Data analysis \& ML:} Pandas, NumPy, SciPy, Scikit-learn, PyTorch, deep learning (CNN, MLP), clustering, anomaly detection, statistical modeling\\[2pt]
+\textbf{Data engineering:} ETL, Apache Spark (Structured Streaming, batch), Apache Kafka, Apache Airflow, Parquet, MySQL, relational modeling (ERD)\\[2pt]
+\textbf{Visualization \& reporting:} Power BI, Matplotlib, Seaborn, Plotly, Streamlit, Excel\\[2pt]
 \textbf{Tools:} Git/GitHub, Docker, Linux, Jupyter, Django, Azure, REST APIs, UML
 
 \secgap
@@ -66,21 +66,23 @@ Engineering student (4th year) focused on data, with hands-on experience in real
 
 \job{Business Intelligence Developer Intern}{Nov 3, 2026 -- Apr 2, 2027 (Ongoing)}{Radisson Hotel Group -- Pulse by RHG}{Madrid, Spain}
 \begin{itemize}
-  \item Refactored 20+ critical ClickHouse stored procedures (scalar hoisting, PREWHERE pushdown, vectorized \texttt{multiIf}, single-pass aggregations), sharply cutting RAM usage and dashboard query times
-  \item Solved partition explosion by leading table unpartitioning migrations, removing ZooKeeper bottlenecks and accelerating merges across key revenue management schemas
-  \item Overhauled Python ReviewPro API pipeline (\texttt{sds}), slashing external HTTP calls by 90\% via batch fetching and atomic table updates (\texttt{EXCHANGE TABLES}); deprecated 25+ legacy views and added TY vs STLY tracking
+  \item Optimized 20+ analytical ClickHouse stored procedures (scalar hoisting, PREWHERE pushdown), sharply reducing query latency and RAM usage
+  \item Overhauled the Python API ingestion pipeline, cutting external HTTP requests by 90\% via asynchronous batching
+  \item Solved partition explosion across revenue schemas through table unpartitioning, eliminating ZooKeeper bottlenecks
 \end{itemize}
 
 \itemgap
 \job{Sales \& Operations Intern}{Jan -- Feb 2025}{Darty}{Paris, France}
 \begin{itemize}
-  \item Merchandised audio department, ran live product demonstrations, and analyzed holiday sales trends to optimize high-turnover product placement
+  \item Improved customer engagement through audio department merchandising and live product demonstrations
+  \item Analyzed sales trends to optimize the placement of high-turnover products during the holiday season
 \end{itemize}
 
 \itemgap
 \job{Inventory \& Quality Control Intern}{June -- July 2024}{U Express}{Le Havre, France}
 \begin{itemize}
-  \item Verified incoming stock deliveries against purchase orders to maintain reliable inventory records, and reduced food waste via daily expiry auditing
+  \item Matched incoming deliveries against purchase orders to keep stock records reliable
+  \item Audited stock and expiry dates daily to reduce food waste
 \end{itemize}
 
 \secgap
@@ -130,7 +132,7 @@ Engineering student (4th year) focused on data, with hands-on experience in real
 \secgap
 %-------------------- LANGUAGES & INTERESTS --------------------
 \section{Languages \& Interests}
-\textbf{Languages:} French (native) \,|\, English (Fluent / C1) \,|\, Spanish (B1)\\[1.5pt]
+\textbf{Languages:} French (native) \,|\, English (Fluent / C1) \,|\, Spanish (B1)\\[2pt]
 \textbf{Interests:} Badminton (EFREI Sports Office, since 2023) \,|\, Tennis (5 years, recently resumed)
 
 \end{document}
