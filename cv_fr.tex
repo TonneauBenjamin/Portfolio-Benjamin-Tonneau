@@ -1,0 +1,141 @@
+%-------------------------------------------------------------------
+% CV COMPATIBLE ATS - Benjamin Tonneau (version francaise, mise a jour)
+% Colonne unique, texte lisible par les ATS, sans image/tableau.
+% Compilation avec pdflatex. Mise en page : une page A4.
+%-------------------------------------------------------------------
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[top=1.1cm,bottom=1.0cm,left=1.5cm,right=1.5cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\IfFileExists{lmodern.sty}{\usepackage{lmodern}}{}
+\usepackage[french]{babel}
+\makeatletter
+\@ifundefined{FBsetup}{}{\FBsetup{StandardLists=true}}
+\makeatother
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\linespread{1.0}
+
+\titleformat{\section}{\large\bfseries}{}{0em}{\MakeUppercase}[\vspace{2pt}\titlerule]
+\titlespacing*{\section}{0pt}{0pt}{3pt}
+
+\setlist[itemize]{leftmargin=1.4em, itemsep=1.5pt, parsep=0pt, topsep=1.5pt, label=\textbullet}
+
+\newcommand{\secgap}{\vspace{\stretch{1}}}
+\newcommand{\itemgap}{\vspace{\stretch{0.4}}}
+
+% \job{Intitule}{Dates}{Organisation}{Lieu}
+\newcommand{\job}[4]{%
+  \textbf{#1} \hfill #2\\
+  \textit{#3} \hfill \textit{#4}\par\vspace{1pt}
+}
+
+% \edu{Etablissement}{Dates}{Diplome}{Lieu}
+\newcommand{\edu}[4]{%
+  \textbf{#1} \hfill #2\\
+  \textit{#3} \hfill \textit{#4}\par\vspace{1pt}
+}
+
+\begin{document}
+
+%-------------------- EN-TETE --------------------
+\begin{center}
+  {\LARGE \textbf{Benjamin Tonneau}}\\[4pt]
+  Paris, France \,|\, \href{tel:+33745259906}{+33 7 45 25 99 06} \,|\, benjamintonneau@outlook.com \,|\, \href{https://linkedin.com/in/benjamin-tonneau}{LinkedIn} \,|\, \href{https://github.com/TonneauBenjamin}{GitHub}
+\end{center}
+
+\secgap
+%-------------------- PROFIL --------------------
+\section{Profil}
+Étudiant ingénieur (4ème année) orienté data, avec des projets de pipelines de données en temps réel, d'analyse statistique et de machine learning (Python, SQL, Spark). Parcours international (Hong Kong, Nanjing, Madrid). Objectif : aider à décider grâce à la donnée, par l'automatisation et le reporting.
+
+\secgap
+%-------------------- COMPETENCES --------------------
+\section{Compétences}
+\textbf{Programmation \& requêtage :} Python, SQL (optimisation de requêtes), ClickHouse, C, Java, HTML/CSS/JavaScript, MATLAB\\[2pt]
+\textbf{Analyse de données \& ML :} Pandas, NumPy, SciPy, Scikit-learn, PyTorch, deep learning (CNN, MLP), clustering, détection d'anomalies, modélisation statistique\\[2pt]
+\textbf{Data engineering :} ETL, Apache Spark (Structured Streaming, batch), Apache Kafka, Apache Airflow, Parquet, MySQL, modélisation relationnelle (MCD/MLD)\\[2pt]
+\textbf{Visualisation \& reporting :} Power BI, Matplotlib, Seaborn, Plotly, Excel\\[2pt]
+\textbf{Outils :} Git/GitHub, Docker, Linux, Jupyter, Django, Streamlit, Azure, API REST, UML
+
+\secgap
+%-------------------- EXPERIENCE --------------------
+\section{Expérience professionnelle}
+
+\job{Stagiaire Business Intelligence Developer}{3 nov. 2026 -- 2 avr. 2027 (En cours)}{Radisson Hotel Group -- Pulse by RHG}{Madrid, Espagne}
+\begin{itemize}
+  \item Optimisation de requêtes SQL sur ClickHouse pour Pulse, la plateforme BI de revenue management du groupe
+  \item Migration de données
+  \item Analyse des besoins métier derrière les données pour alimenter les tableaux de bord, dans une équipe internationale
+\end{itemize}
+
+\itemgap
+\job{Stagiaire Commercial \& Opérations}{Janv. -- Févr. 2025}{Darty}{Paris, France}
+\begin{itemize}
+  \item Amélioration de l'engagement client via la refonte du rayon audio et des démonstrations en direct
+  \item Analyse des tendances de ventes pour optimiser le positionnement des produits à forte rotation en période de fêtes
+\end{itemize}
+
+\itemgap
+\job{Stagiaire Gestion des Stocks \& Contrôle Qualité}{Juin -- Juil. 2024}{U Express}{Le Havre, France}
+\begin{itemize}
+  \item Rapprochement des livraisons entrantes avec les bons de commande pour garantir la fiabilité des stocks
+  \item Audit quotidien des stocks et des dates limites pour réduire le gaspillage alimentaire
+\end{itemize}
+
+\secgap
+%-------------------- FORMATION --------------------
+\section{Formation}
+
+\edu{EFREI Paris -- Université Panthéon-Assas}{Août 2023 -- 2028 (En cours)}{Diplôme d'ingénieur en informatique, spécialisation Data Engineering}{Paris, France}
+\begin{itemize}
+  \item Cours : Mathématiques pour le ML, Analyse de données, Bases de données, Algorithmique
+\end{itemize}
+
+\itemgap
+\edu{Southeast University (SEU)}{Sept. 2025 -- Déc. 2025}{Échange en anglais -- 17ème mondial en Computer Science \& Eng. (ARWU 2025)}{Nanjing, Chine}
+
+\itemgap
+\edu{Lycée Français International de Hong Kong}{Sept. 2011 -- Juin 2023}{Baccalauréat Général, Mention Bien (Mathématiques, Physique-Chimie)}{Hong Kong}
+
+\secgap
+%-------------------- PROJETS --------------------
+\section{Projets}
+
+\textbf{Suivi de flotte en temps réel (capstone Big Data)} \hfill \textit{Kafka, Spark, Airflow, Docker}
+\begin{itemize}
+  \item Télémétrie de véhicules ingérée dans Kafka et traitée par Spark Structured Streaming : événements invalides, indicateurs régionaux à la minute, excès de vitesse prolongé
+  \item Jobs batch Spark sur Parquet (contrôle qualité, rapport quotidien, data skew), orchestrés avec Airflow
+\end{itemize}
+
+\itemgap
+\textbf{Pipeline d'analyse cybersécurité (Mastercamp ANSSI)} \hfill \textit{Python, Scikit-learn, Django}
+\begin{itemize}
+  \item Bulletins CERT-FR (ANSSI) et CVE enrichis avec les scores CVSS et EPSS via les API NVD et FIRST
+  \item Random Forest, KMeans et Isolation Forest pour prioriser les vulnérabilités, alertes email et tableau de bord Django
+\end{itemize}
+
+\itemgap
+\textbf{Assistant radiologue virtuel (MedGemma)} \hfill \textit{Python, PyTorch, Streamlit}
+\begin{itemize}
+  \item Application web avec LLM pour l'aide au diagnostic sur radiographies thoraciques, avec sorties traçables et évaluées
+\end{itemize}
+
+\itemgap
+\textbf{Modèles de deep learning codés from scratch} \hfill \textit{Python, NumPy, PyTorch}
+\begin{itemize}
+  \item MLP et CNN en NumPy et PyTorch (MNIST, CIFAR-10), puis cancer du sein sur mammographies (CBIS-DDSM)
+\end{itemize}
+
+\secgap
+%-------------------- LANGUES & CENTRES D'INTERET --------------------
+\section{Langues \& Centres d'intérêt}
+\textbf{Langues :} Français (langue maternelle) \,|\, Anglais (Courant / C1) \,|\, Espagnol (B1)\\[2pt]
+\textbf{Centres d'intérêt :} Badminton (Bureau des Sports de l'EFREI, depuis 2023) \,|\, Tennis (5 ans, repris récemment)
+
+\end{document}
