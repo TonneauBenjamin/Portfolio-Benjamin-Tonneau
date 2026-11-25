@@ -5,7 +5,7 @@
 %-------------------------------------------------------------------
 \documentclass[10pt,a4paper]{article}
 
-\usepackage[top=0.8cm,bottom=0.8cm,left=1.35cm,right=1.35cm]{geometry}
+\usepackage[top=1.0cm,bottom=0.9cm,left=1.4cm,right=1.4cm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \IfFileExists{lmodern.sty}{\usepackage{lmodern}}{}
@@ -19,15 +19,15 @@
 
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
-\linespread{0.98}
+\linespread{1.0}
 
-\titleformat{\section}{\large\bfseries}{}{0em}{\MakeUppercase}[\vspace{1.5pt}\titlerule]
-\titlespacing*{\section}{0pt}{2pt}{2pt}
+\titleformat{\section}{\large\bfseries}{}{0em}{\MakeUppercase}[\vspace{2pt}\titlerule]
+\titlespacing*{\section}{0pt}{1pt}{2.5pt}
 
-\setlist[itemize]{leftmargin=1.25em, itemsep=0.5pt, parsep=0pt, topsep=1pt, label=\textbullet}
+\setlist[itemize]{leftmargin=1.3em, itemsep=1pt, parsep=0pt, topsep=1pt, label=\textbullet}
 
 \newcommand{\secgap}{\vspace{\stretch{1}}}
-\newcommand{\itemgap}{\vspace{\stretch{0.3}}}
+\newcommand{\itemgap}{\vspace{\stretch{0.35}}}
 
 % \job{Intitule}{Dates}{Organisation}{Lieu}
 \newcommand{\job}[4]{%
@@ -57,10 +57,10 @@
 \secgap
 %-------------------- COMPETENCES --------------------
 \section{Compétences}
-\textbf{Programmation \& requêtage :} Python, SQL (optimisation de requêtes), ClickHouse, C, Java, HTML/CSS/JavaScript, MATLAB\\[1.5pt]
-\textbf{Analyse de données \& ML :} Pandas, NumPy, SciPy, Scikit-learn, PyTorch, deep learning (CNN, MLP), clustering, détection d'anomalies, modélisation statistique\\[1.5pt]
-\textbf{Data engineering :} ETL, Apache Spark (Structured Streaming, batch), Apache Kafka, Apache Airflow, Parquet, MySQL, modélisation relationnelle (MCD/MLD)\\[1.5pt]
-\textbf{Visualisation \& reporting :} Power BI, Matplotlib, Seaborn, Plotly, Streamlit, Excel\\[1.5pt]
+\textbf{Programmation \& requêtage :} Python, SQL (optimisation de requêtes), ClickHouse, C, Java, HTML/CSS/JavaScript, MATLAB\\[2pt]
+\textbf{Analyse de données \& ML :} Pandas, NumPy, SciPy, Scikit-learn, PyTorch, deep learning (CNN, MLP), clustering, détection d'anomalies, modélisation statistique\\[2pt]
+\textbf{Data engineering :} ETL, Apache Spark (Structured Streaming, batch), Apache Kafka, Apache Airflow, Parquet, MySQL, modélisation relationnelle (MCD/MLD)\\[2pt]
+\textbf{Visualisation \& reporting :} Power BI, Matplotlib, Seaborn, Plotly, Streamlit, Excel\\[2pt]
 \textbf{Outils :} Git/GitHub, Docker, Linux, Jupyter, Django, Azure, API REST, UML
 
 \secgap
@@ -69,21 +69,23 @@
 
 \job{Stagiaire Business Intelligence Developer}{3 nov. 2026 -- 2 avr. 2027 (En cours)}{Radisson Hotel Group -- Pulse by RHG}{Madrid, Espagne}
 \begin{itemize}
-  \item Optimisation de 20+ procédures ClickHouse critiques (scalar hoisting, PREWHERE pushdown, \texttt{multiIf} vectorisés, agrégations single-pass), réduisant nettement la RAM et les temps de calcul
-  \item Résolution de l'explosion de partitions via le dé-partitionnement systématique des tables clés, éliminant la saturation de ZooKeeper et accélérant les merges
-  \item Refonte du pipeline d'ingestion API en Python (\texttt{sds}), divisant par 10 les requêtes HTTP (-90\%) via le traitement par lot asynchrone et des mises à jour atomiques (\texttt{EXCHANGE TABLES}); suppression de 25+ vues obsolètes et suivi TY vs STLY
+  \item Optimisation de 20+ procédures stockées ClickHouse critiques (scalar hoisting, PREWHERE pushdown), réduisant nettement la latence et la RAM
+  \item Refonte du pipeline d'ingestion API en Python, divisant par 10 les requêtes HTTP (-90\%) via le traitement par lot asynchrone
+  \item Résolution de l'explosion de partitions par dé-partitionnement des tables clés, éliminant la saturation de ZooKeeper
 \end{itemize}
 
 \itemgap
 \job{Stagiaire Commercial \& Opérations}{Janv. -- Févr. 2025}{Darty}{Paris, France}
 \begin{itemize}
-  \item Merchandising du rayon audio, démonstrations produits en direct et analyse des tendances de ventes pour optimiser les produits à forte rotation
+  \item Amélioration de l'engagement client via la refonte du rayon audio et des démonstrations en direct
+  \item Analyse des tendances de ventes pour optimiser le positionnement des produits à forte rotation en période de fêtes
 \end{itemize}
 
 \itemgap
 \job{Stagiaire Gestion des Stocks \& Contrôle Qualité}{Juin -- Juil. 2024}{U Express}{Le Havre, France}
 \begin{itemize}
-  \item Rapprochement des livraisons avec les bons de commande pour fiabiliser les stocks, et réduction du gaspillage par audit quotidien des dates limites
+  \item Rapprochement des livraisons entrantes avec les bons de commande pour garantir la fiabilité des stocks
+  \item Audit quotidien des stocks et des dates limites pour réduire le gaspillage alimentaire
 \end{itemize}
 
 \secgap
@@ -133,7 +135,7 @@
 \secgap
 %-------------------- LANGUES & CENTRES D'INTERET --------------------
 \section{Langues \& Centres d'intérêt}
-\textbf{Langues :} Français (langue maternelle) \,|\, Anglais (Courant / C1) \,|\, Espagnol (B1)\\[1.5pt]
+\textbf{Langues :} Français (langue maternelle) \,|\, Anglais (Courant / C1) \,|\, Espagnol (B1)\\[2pt]
 \textbf{Centres d'intérêt :} Badminton (Bureau des Sports de l'EFREI, depuis 2023) \,|\, Tennis (5 ans, repris récemment)
 
 \end{document}
