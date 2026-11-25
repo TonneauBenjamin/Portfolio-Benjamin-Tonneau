@@ -1,0 +1,138 @@
+%-------------------------------------------------------------------
+% ATS-FRIENDLY CV - Benjamin Tonneau (English version)
+% Single column, ATS-readable text, no images or tables.
+% Compile with pdflatex. Layout: one A4 page.
+%-------------------------------------------------------------------
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[top=1.1cm,bottom=1.0cm,left=1.5cm,right=1.5cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\IfFileExists{lmodern.sty}{\usepackage{lmodern}}{}
+\usepackage[english]{babel}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\linespread{1.0}
+
+\titleformat{\section}{\large\bfseries}{}{0em}{\MakeUppercase}[\vspace{2pt}\titlerule]
+\titlespacing*{\section}{0pt}{0pt}{3pt}
+
+\setlist[itemize]{leftmargin=1.4em, itemsep=1.5pt, parsep=0pt, topsep=1.5pt, label=\textbullet}
+
+\newcommand{\secgap}{\vspace{\stretch{1}}}
+\newcommand{\itemgap}{\vspace{\stretch{0.4}}}
+
+% \job{Title}{Dates}{Organization}{Location}
+\newcommand{\job}[4]{%
+  \textbf{#1} \hfill #2\\
+  \textit{#3} \hfill \textit{#4}\par\vspace{1pt}
+}
+
+% \edu{Institution}{Dates}{Degree}{Location}
+\newcommand{\edu}[4]{%
+  \textbf{#1} \hfill #2\\
+  \textit{#3} \hfill \textit{#4}\par\vspace{1pt}
+}
+
+\begin{document}
+
+%-------------------- HEADER --------------------
+\begin{center}
+  {\LARGE \textbf{Benjamin Tonneau}}\\[4pt]
+  Paris, France \,|\, \href{tel:+33745259906}{+33 7 45 25 99 06} \,|\, benjamintonneau@outlook.com \,|\, \href{https://linkedin.com/in/benjamin-tonneau}{LinkedIn} \,|\, \href{https://github.com/TonneauBenjamin}{GitHub}
+\end{center}
+
+\secgap
+%-------------------- PROFILE --------------------
+\section{Profile}
+Engineering student (4th year) focused on data, with projects in real-time data pipelines, statistical analysis and machine learning (Python, SQL, Spark). International background (Hong Kong, Nanjing, Madrid). Goal: support decisions with data through automation and reporting.
+
+\secgap
+%-------------------- SKILLS --------------------
+\section{Skills}
+\textbf{Programming \& querying:} Python, SQL (query optimization), ClickHouse, C, Java, HTML/CSS/JavaScript, MATLAB\\[2pt]
+\textbf{Data analysis \& ML:} Pandas, NumPy, SciPy, Scikit-learn, PyTorch, deep learning (CNN, MLP), clustering, anomaly detection, statistical modeling\\[2pt]
+\textbf{Data engineering:} ETL, Apache Spark (Structured Streaming, batch), Apache Kafka, Apache Airflow, Parquet, MySQL, relational modeling (ERD)\\[2pt]
+\textbf{Visualization \& reporting:} Power BI, Matplotlib, Seaborn, Plotly, Excel\\[2pt]
+\textbf{Tools:} Git/GitHub, Docker, Linux, Jupyter, Django, Streamlit, Azure, REST APIs, UML
+
+\secgap
+%-------------------- EXPERIENCE --------------------
+\section{Professional Experience}
+
+\job{Business Intelligence Developer Intern}{Nov 3, 2026 -- Apr 2, 2027 (Ongoing)}{Radisson Hotel Group -- Pulse by RHG}{Madrid, Spain}
+\begin{itemize}
+  \item SQL query optimization on ClickHouse for Pulse, the group's revenue management BI platform
+  \item Data migration
+  \item Analysis of the business needs behind the data feeding the dashboards, within an international team
+\end{itemize}
+
+\itemgap
+\job{Sales \& Operations Intern}{Jan -- Feb 2025}{Darty}{Paris, France}
+\begin{itemize}
+  \item Improved customer engagement by redesigning the audio department and running live product demonstrations
+  \item Analyzed sales trends to optimize the placement of high-turnover products during the holiday season
+\end{itemize}
+
+\itemgap
+\job{Inventory \& Quality Control Intern}{June -- July 2024}{U Express}{Le Havre, France}
+\begin{itemize}
+  \item Matched incoming deliveries against purchase orders to keep stock records reliable
+  \item Audited stock and expiry dates daily to reduce food waste
+\end{itemize}
+
+\secgap
+%-------------------- EDUCATION --------------------
+\section{Education}
+
+\edu{EFREI Paris -- Panth\x27eon-Assas University}{Aug 2023 -- 2028 (Ongoing)}{Master of Engineering in Computer Science, Data Engineering specialization}{Paris, France}
+\begin{itemize}
+  \item Courses: Mathematics for ML, Data Analysis, Databases, Algorithms
+\end{itemize}
+
+\itemgap
+\edu{Southeast University (SEU)}{Sept 2025 -- Dec 2025}{Exchange in English -- 17th worldwide in Computer Science \& Eng. (ARWU 2025)}{Nanjing, China}
+
+\itemgap
+\edu{Lyc\x27ee Fran\c{c}ais International de Hong Kong}{Sept 2011 -- June 2023}{French Baccalaur\x27eat (General track), Mention Bien (Mathematics, Physics-Chemistry)}{Hong Kong}
+
+\secgap
+%-------------------- PROJECTS --------------------
+\section{Projects}
+
+\textbf{Real-time fleet tracking (Big Data capstone)} \hfill \textit{Kafka, Spark, Airflow, Docker}
+\begin{itemize}
+  \item Vehicle telemetry ingested into Kafka and processed with Spark Structured Streaming: invalid events, per-minute regional indicators, prolonged speeding detection
+  \item Spark batch jobs on Parquet (quality checks, daily report, data skew), orchestrated with Airflow
+\end{itemize}
+
+\itemgap
+\textbf{Cybersecurity analysis pipeline (Mastercamp ANSSI)} \hfill \textit{Python, Scikit-learn, Django}
+\begin{itemize}
+  \item CERT-FR (ANSSI) bulletins and CVEs enriched with CVSS and EPSS scores through the NVD and FIRST APIs
+  \item Random Forest, KMeans and Isolation Forest to prioritize vulnerabilities, with email alerts and a Django dashboard
+\end{itemize}
+
+\itemgap
+\textbf{Virtual radiologist assistant (MedGemma)} \hfill \textit{Python, PyTorch, Streamlit}
+\begin{itemize}
+  \item Web application with an LLM for diagnostic support on chest X-rays, with traceable and evaluated outputs
+\end{itemize}
+
+\itemgap
+\textbf{Deep learning models built from scratch} \hfill \textit{Python, NumPy, PyTorch}
+\begin{itemize}
+  \item MLP and CNN in NumPy and PyTorch (MNIST, CIFAR-10), then breast cancer detection (CBIS-DDSM)
+\end{itemize}
+
+\secgap
+%-------------------- LANGUAGES & INTERESTS --------------------
+\section{Languages \& Interests}
+\textbf{Languages:} French (native) \,|\, English (Fluent / C1) \,|\, Spanish (B1)\\[2pt]
+\textbf{Interests:} Badminton (EFREI Sports Office, since 2023) \,|\, Tennis (5 years, recently resumed)
+
+\end{document}
