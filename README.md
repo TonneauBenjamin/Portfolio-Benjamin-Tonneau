@@ -34,6 +34,8 @@ Ce portfolio a été conçu pour offrir une vitrine claire et interactive à des
 
 | Projet | Domaine | Technologies |
 | :--- | :--- | :--- |
+| **Monitoring Flotte Streaming** | Big Data & Streaming | Apache Kafka, Docker, Python |
+| **The Resilient Racket (Tennis)** | Data Visualization & Story | Streamlit, Pandas, INJEP Open Data |
 | **Pipeline CERT-FR** | Cybersécurité & Data | Python, REST API, Pandas |
 | **CDataframe** | Systèmes & Structures de données | C, Make, Gestion mémoire dynamique |
 | **Assistant Radiologue Virtuel** | IA Médicale & Multimodal | PyTorch, Computer Vision, NLP |
