@@ -1,11 +1,11 @@
 %-------------------------------------------------------------------
 % CV COMPATIBLE ATS - Benjamin Tonneau (version francaise, mise a jour)
 % Colonne unique, texte lisible par les ATS, sans image/tableau.
-% Compilation avec pdflatex. Mise en page : une page A4.
+% Compilation avec pdflatex. Mise en page : strictement une page A4.
 %-------------------------------------------------------------------
 \documentclass[10pt,a4paper]{article}
 
-\usepackage[top=1.1cm,bottom=1.0cm,left=1.5cm,right=1.5cm]{geometry}
+\usepackage[top=0.8cm,bottom=0.8cm,left=1.35cm,right=1.35cm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \IfFileExists{lmodern.sty}{\usepackage{lmodern}}{}
@@ -19,33 +19,33 @@
 
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
-\linespread{1.0}
+\linespread{0.98}
 
-\titleformat{\section}{\large\bfseries}{}{0em}{\MakeUppercase}[\vspace{2pt}\titlerule]
-\titlespacing*{\section}{0pt}{0pt}{3pt}
+\titleformat{\section}{\large\bfseries}{}{0em}{\MakeUppercase}[\vspace{1.5pt}\titlerule]
+\titlespacing*{\section}{0pt}{2pt}{2pt}
 
-\setlist[itemize]{leftmargin=1.4em, itemsep=1.5pt, parsep=0pt, topsep=1.5pt, label=\textbullet}
+\setlist[itemize]{leftmargin=1.25em, itemsep=0.5pt, parsep=0pt, topsep=1pt, label=\textbullet}
 
 \newcommand{\secgap}{\vspace{\stretch{1}}}
-\newcommand{\itemgap}{\vspace{\stretch{0.4}}}
+\newcommand{\itemgap}{\vspace{\stretch{0.3}}}
 
 % \job{Intitule}{Dates}{Organisation}{Lieu}
 \newcommand{\job}[4]{%
   \textbf{#1} \hfill #2\\
-  \textit{#3} \hfill \textit{#4}\par\vspace{1pt}
+  \textit{#3} \hfill \textit{#4}\par\vspace{0.5pt}
 }
 
 % \edu{Etablissement}{Dates}{Diplome}{Lieu}
 \newcommand{\edu}[4]{%
   \textbf{#1} \hfill #2\\
-  \textit{#3} \hfill \textit{#4}\par\vspace{1pt}
+  \textit{#3} \hfill \textit{#4}\par\vspace{0.5pt}
 }
 
 \begin{document}
 
 %-------------------- EN-TETE --------------------
 \begin{center}
-  {\LARGE \textbf{Benjamin Tonneau}}\\[4pt]
+  {\LARGE \textbf{Benjamin Tonneau}}\\[3pt]
   Paris, France \,|\, \href{tel:+33745259906}{+33 7 45 25 99 06} \,|\, benjamintonneau@outlook.com \,|\, \href{https://linkedin.com/in/benjamin-tonneau}{LinkedIn} \,|\, \href{https://github.com/TonneauBenjamin}{GitHub}
 \end{center}
 
@@ -57,10 +57,10 @@
 \secgap
 %-------------------- COMPETENCES --------------------
 \section{Compétences}
-\textbf{Programmation \& requêtage :} Python, SQL (optimisation de requêtes), ClickHouse, C, Java, HTML/CSS/JavaScript, MATLAB\\[2pt]
-\textbf{Analyse de données \& ML :} Pandas, NumPy, SciPy, Scikit-learn, PyTorch, deep learning (CNN, MLP), clustering, détection d'anomalies, modélisation statistique\\[2pt]
-\textbf{Data engineering :} ETL, Apache Spark (Structured Streaming, batch), Apache Kafka, Apache Airflow, Parquet, MySQL, modélisation relationnelle (MCD/MLD)\\[2pt]
-\textbf{Visualisation \& reporting :} Power BI, Matplotlib, Seaborn, Plotly, Streamlit, Excel\\[2pt]
+\textbf{Programmation \& requêtage :} Python, SQL (optimisation de requêtes), ClickHouse, C, Java, HTML/CSS/JavaScript, MATLAB\\[1.5pt]
+\textbf{Analyse de données \& ML :} Pandas, NumPy, SciPy, Scikit-learn, PyTorch, deep learning (CNN, MLP), clustering, détection d'anomalies, modélisation statistique\\[1.5pt]
+\textbf{Data engineering :} ETL, Apache Spark (Structured Streaming, batch), Apache Kafka, Apache Airflow, Parquet, MySQL, modélisation relationnelle (MCD/MLD)\\[1.5pt]
+\textbf{Visualisation \& reporting :} Power BI, Matplotlib, Seaborn, Plotly, Streamlit, Excel\\[1.5pt]
 \textbf{Outils :} Git/GitHub, Docker, Linux, Jupyter, Django, Azure, API REST, UML
 
 \secgap
@@ -69,24 +69,21 @@
 
 \job{Stagiaire Business Intelligence Developer}{3 nov. 2026 -- 2 avr. 2027 (En cours)}{Radisson Hotel Group -- Pulse by RHG}{Madrid, Espagne}
 \begin{itemize}
-  \item Optimisation de 20+ procédures stockées ClickHouse critiques (scalar hoisting, PREWHERE pushdown, \texttt{multiIf} vectorisés, agrégations single-pass), réduisant nettement la RAM et les temps de calcul
+  \item Optimisation de 20+ procédures ClickHouse critiques (scalar hoisting, PREWHERE pushdown, \texttt{multiIf} vectorisés, agrégations single-pass), réduisant nettement la RAM et les temps de calcul
   \item Résolution de l'explosion de partitions via le dé-partitionnement systématique des tables clés, éliminant la saturation de ZooKeeper et accélérant les merges
-  \item Refonte du pipeline d'ingestion API en Python (\texttt{sds}), divisant par 10 les requêtes HTTP (-90\%) via le traitement par lot asynchrone et des mises à jour atomiques (\texttt{EXCHANGE TABLES})
-  \item Réduction de la dette technique (retrait de 25+ vues obsolètes) et intégration du suivi comparatif TY vs STLY (This Year vs Same Time Last Year) sur l'applicatif Pulse 3.0
+  \item Refonte du pipeline d'ingestion API en Python (\texttt{sds}), divisant par 10 les requêtes HTTP (-90\%) via le traitement par lot asynchrone et des mises à jour atomiques (\texttt{EXCHANGE TABLES}); suppression de 25+ vues obsolètes et suivi TY vs STLY
 \end{itemize}
 
 \itemgap
 \job{Stagiaire Commercial \& Opérations}{Janv. -- Févr. 2025}{Darty}{Paris, France}
 \begin{itemize}
-  \item Amélioration de l'engagement client via la refonte du rayon audio et des démonstrations en direct
-  \item Analyse des tendances de ventes pour optimiser le positionnement des produits à forte rotation en période de fêtes
+  \item Merchandising du rayon audio, démonstrations produits en direct et analyse des tendances de ventes pour optimiser les produits à forte rotation
 \end{itemize}
 
 \itemgap
 \job{Stagiaire Gestion des Stocks \& Contrôle Qualité}{Juin -- Juil. 2024}{U Express}{Le Havre, France}
 \begin{itemize}
-  \item Rapprochement des livraisons entrantes avec les bons de commande pour garantir la fiabilité des stocks
-  \item Audit quotidien des stocks et des dates limites pour réduire le gaspillage alimentaire
+  \item Rapprochement des livraisons avec les bons de commande pour fiabiliser les stocks, et réduction du gaspillage par audit quotidien des dates limites
 \end{itemize}
 
 \secgap
@@ -95,7 +92,7 @@
 
 \edu{EFREI Paris -- Université Panthéon-Assas}{Août 2023 -- 2028 (En cours)}{Diplôme d'ingénieur en informatique, spécialisation Data Engineering}{Paris, France}
 \begin{itemize}
-  \item Cours : Mathématiques pour le ML, Analyse de données, Bases de données, Algorithmique
+  \item Cours : Mathématiques pour le ML, Analyse de données, Bases de données, Algorithmique \& structures de données
 \end{itemize}
 
 \itemgap
@@ -136,7 +133,7 @@
 \secgap
 %-------------------- LANGUES & CENTRES D'INTERET --------------------
 \section{Langues \& Centres d'intérêt}
-\textbf{Langues :} Français (langue maternelle) \,|\, Anglais (Courant / C1) \,|\, Espagnol (B1)\\[2pt]
+\textbf{Langues :} Français (langue maternelle) \,|\, Anglais (Courant / C1) \,|\, Espagnol (B1)\\[1.5pt]
 \textbf{Centres d'intérêt :} Badminton (Bureau des Sports de l'EFREI, depuis 2023) \,|\, Tennis (5 ans, repris récemment)
 
 \end{document}
