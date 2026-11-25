@@ -1,11 +1,11 @@
 %-------------------------------------------------------------------
 % ATS-FRIENDLY CV - Benjamin Tonneau (English version)
 % Single column, ATS-readable text, no images or tables.
-% Compile with pdflatex. Layout: one A4 page.
+% Compile with pdflatex. Layout: strictly one A4 page.
 %-------------------------------------------------------------------
 \documentclass[10pt,a4paper]{article}
 
-\usepackage[top=1.1cm,bottom=1.0cm,left=1.5cm,right=1.5cm]{geometry}
+\usepackage[top=0.8cm,bottom=0.8cm,left=1.35cm,right=1.35cm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \IfFileExists{lmodern.sty}{\usepackage{lmodern}}{}
@@ -16,33 +16,33 @@
 
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
-\linespread{1.0}
+\linespread{0.98}
 
-\titleformat{\section}{\large\bfseries}{}{0em}{\MakeUppercase}[\vspace{2pt}\titlerule]
-\titlespacing*{\section}{0pt}{0pt}{3pt}
+\titleformat{\section}{\large\bfseries}{}{0em}{\MakeUppercase}[\vspace{1.5pt}\titlerule]
+\titlespacing*{\section}{0pt}{2pt}{2pt}
 
-\setlist[itemize]{leftmargin=1.4em, itemsep=1.5pt, parsep=0pt, topsep=1.5pt, label=\textbullet}
+\setlist[itemize]{leftmargin=1.25em, itemsep=0.5pt, parsep=0pt, topsep=1pt, label=\textbullet}
 
 \newcommand{\secgap}{\vspace{\stretch{1}}}
-\newcommand{\itemgap}{\vspace{\stretch{0.4}}}
+\newcommand{\itemgap}{\vspace{\stretch{0.3}}}
 
 % \job{Title}{Dates}{Organization}{Location}
 \newcommand{\job}[4]{%
   \textbf{#1} \hfill #2\\
-  \textit{#3} \hfill \textit{#4}\par\vspace{1pt}
+  \textit{#3} \hfill \textit{#4}\par\vspace{0.5pt}
 }
 
 % \edu{Institution}{Dates}{Degree}{Location}
 \newcommand{\edu}[4]{%
   \textbf{#1} \hfill #2\\
-  \textit{#3} \hfill \textit{#4}\par\vspace{1pt}
+  \textit{#3} \hfill \textit{#4}\par\vspace{0.5pt}
 }
 
 \begin{document}
 
 %-------------------- HEADER --------------------
 \begin{center}
-  {\LARGE \textbf{Benjamin Tonneau}}\\[4pt]
+  {\LARGE \textbf{Benjamin Tonneau}}\\[3pt]
   Paris, France \,|\, \href{tel:+33745259906}{+33 7 45 25 99 06} \,|\, benjamintonneau@outlook.com \,|\, \href{https://linkedin.com/in/benjamin-tonneau}{LinkedIn} \,|\, \href{https://github.com/TonneauBenjamin}{GitHub}
 \end{center}
 
@@ -54,10 +54,10 @@ Engineering student (4th year) focused on data, with hands-on experience in real
 \secgap
 %-------------------- SKILLS --------------------
 \section{Skills}
-\textbf{Programming \& querying:} Python, SQL (query optimization), ClickHouse, C, Java, HTML/CSS/JavaScript, MATLAB\\[2pt]
-\textbf{Data analysis \& ML:} Pandas, NumPy, SciPy, Scikit-learn, PyTorch, deep learning (CNN, MLP), clustering, anomaly detection, statistical modeling\\[2pt]
-\textbf{Data engineering:} ETL, Apache Spark (Structured Streaming, batch), Apache Kafka, Apache Airflow, Parquet, MySQL, relational modeling (ERD)\\[2pt]
-\textbf{Visualization \& reporting:} Power BI, Matplotlib, Seaborn, Plotly, Streamlit, Excel\\[2pt]
+\textbf{Programming \& querying:} Python, SQL (query optimization), ClickHouse, C, Java, HTML/CSS/JavaScript, MATLAB\\[1.5pt]
+\textbf{Data analysis \& ML:} Pandas, NumPy, SciPy, Scikit-learn, PyTorch, deep learning (CNN, MLP), clustering, anomaly detection, statistical modeling\\[1.5pt]
+\textbf{Data engineering:} ETL, Apache Spark (Structured Streaming, batch), Apache Kafka, Apache Airflow, Parquet, MySQL, relational modeling (ERD)\\[1.5pt]
+\textbf{Visualization \& reporting:} Power BI, Matplotlib, Seaborn, Plotly, Streamlit, Excel\\[1.5pt]
 \textbf{Tools:} Git/GitHub, Docker, Linux, Jupyter, Django, Azure, REST APIs, UML
 
 \secgap
@@ -67,23 +67,20 @@ Engineering student (4th year) focused on data, with hands-on experience in real
 \job{Business Intelligence Developer Intern}{Nov 3, 2026 -- Apr 2, 2027 (Ongoing)}{Radisson Hotel Group -- Pulse by RHG}{Madrid, Spain}
 \begin{itemize}
   \item Refactored 20+ critical ClickHouse stored procedures (scalar hoisting, PREWHERE pushdown, vectorized \texttt{multiIf}, single-pass aggregations), sharply cutting RAM usage and dashboard query times
-  \item Solved partition explosion by leading table unpartitioning migrations, removing ZooKeeper/Keeper bottlenecks and accelerating merge operations across revenue management schemas
-  \item Overhauled Python ReviewPro API ingestion pipeline (\texttt{sds}), slashing external HTTP calls by 90\% (10x reduction) via batch fetching, asynchronous concurrency, and atomic table exchanges (\texttt{EXCHANGE TABLES})
-  \item Deprecated 25+ legacy views to eliminate technical debt, and integrated TY vs STLY (This Year vs Same Time Last Year) room-type analytics on the Pulse 3.0 platform
+  \item Solved partition explosion by leading table unpartitioning migrations, removing ZooKeeper bottlenecks and accelerating merges across key revenue management schemas
+  \item Overhauled Python ReviewPro API pipeline (\texttt{sds}), slashing external HTTP calls by 90\% via batch fetching and atomic table updates (\texttt{EXCHANGE TABLES}); deprecated 25+ legacy views and added TY vs STLY tracking
 \end{itemize}
 
 \itemgap
 \job{Sales \& Operations Intern}{Jan -- Feb 2025}{Darty}{Paris, France}
 \begin{itemize}
-  \item Improved customer engagement by redesigning the audio department and running live product demonstrations
-  \item Analyzed sales trends to optimize the placement of high-turnover products during the holiday season
+  \item Merchandised audio department, ran live product demonstrations, and analyzed holiday sales trends to optimize high-turnover product placement
 \end{itemize}
 
 \itemgap
 \job{Inventory \& Quality Control Intern}{June -- July 2024}{U Express}{Le Havre, France}
 \begin{itemize}
-  \item Matched incoming deliveries against purchase orders to keep stock records reliable
-  \item Audited stock and expiry dates daily to reduce food waste
+  \item Verified incoming stock deliveries against purchase orders to maintain reliable inventory records, and reduced food waste via daily expiry auditing
 \end{itemize}
 
 \secgap
@@ -92,7 +89,7 @@ Engineering student (4th year) focused on data, with hands-on experience in real
 
 \edu{EFREI Paris -- Panth\x27eon-Assas University}{Aug 2023 -- 2028 (Ongoing)}{Master of Engineering in Computer Science, Data Engineering specialization}{Paris, France}
 \begin{itemize}
-  \item Courses: Mathematics for ML, Data Analysis, Databases, Algorithms
+  \item Courses: Mathematics for ML, Data Analysis, Databases, Algorithms \& Data Structures
 \end{itemize}
 
 \itemgap
@@ -133,7 +130,7 @@ Engineering student (4th year) focused on data, with hands-on experience in real
 \secgap
 %-------------------- LANGUAGES & INTERESTS --------------------
 \section{Languages \& Interests}
-\textbf{Languages:} French (native) \,|\, English (Fluent / C1) \,|\, Spanish (B1)\\[2pt]
+\textbf{Languages:} French (native) \,|\, English (Fluent / C1) \,|\, Spanish (B1)\\[1.5pt]
 \textbf{Interests:} Badminton (EFREI Sports Office, since 2023) \,|\, Tennis (5 years, recently resumed)
 
 \end{document}
