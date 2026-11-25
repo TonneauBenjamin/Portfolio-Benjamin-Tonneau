@@ -22,9 +22,8 @@
     --muted:#8A93A6;
     --blue:#3D6BFF;
     --blue-soft:rgba(61,107,255,.15);
-    --blue-line:rgba(61,107,255,.5);
-    --blue-glow:rgba(61,107,255,.35);
-    --rule:rgba(255,255,255,.13);
+    --blue-line:rgba(61,107,255,.4);
+    --rule:rgba(255,255,255,.09);
     --tag-border:rgba(255,255,255,.20);
     --top-bg:rgba(8,9,12,.85);
     --dash:rgba(255,255,255,.75);
@@ -64,11 +63,7 @@
      ================================================================ */
   @keyframes riseIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
   @keyframes maskUp{from{transform:translateY(105%)}to{transform:none}}
-  @keyframes ping{
-    0%{box-shadow:0 0 0 0 var(--blue-glow)}
-    70%{box-shadow:0 0 0 9px rgba(0,0,0,0)}
-    100%{box-shadow:0 0 0 0 rgba(0,0,0,0)}
-  }
+
   @keyframes flow{to{background-position-y:20px}}
   @keyframes chipIn{from{opacity:0;transform:translateY(7px) scale(.96)}to{opacity:1;transform:none}}
   @keyframes lineOut{from{transform:scaleX(0)}to{transform:scaleX(1)}}
@@ -135,7 +130,7 @@
     content:"";position:absolute;inset:0;background:var(--blue);mix-blend-mode:color;
     opacity:.3;transition:opacity .55s ease;pointer-events:none;
   }
-  .shot:hover img{filter:none;transform:scale(1.03)}
+  .shot:hover img{filter:none}
   .shot:hover:after{opacity:0}
   .shot .tag-mono{
     position:absolute;left:0;bottom:0;z-index:2;
@@ -159,10 +154,10 @@
 
   .eyebrow{display:flex;align-items:center;gap:10px;margin:0 0 26px}
   .pulse{
-    width:8px;height:8px;border-radius:50%;background:var(--blue);flex:0 0 auto;
-    animation:ping 2.2s cubic-bezier(.3,0,.6,1) infinite;
+    width:7px;height:7px;border-radius:50%;background:var(--blue);flex:0 0 auto;
+    box-shadow:0 0 0 3px var(--blue-soft);
   }
-  h1{font-family:var(--display);font-weight:700;letter-spacing:-.035em;font-size:clamp(48px,10vw,116px);line-height:.9;margin:0}
+  h1{font-family:var(--display);font-weight:600;letter-spacing:-.025em;font-size:clamp(48px,10vw,116px);line-height:.9;margin:0}
   h1 .line{display:block;overflow:hidden;padding-bottom:.09em;margin-bottom:-.09em}
   h1 .line i{display:block;font-style:normal}
   h1 .l2 i{color:var(--blue)}
