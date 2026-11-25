@@ -52,7 +52,7 @@
 \secgap
 %-------------------- PROFIL --------------------
 \section{Profil}
-Étudiant ingénieur (4ème année) orienté data, avec des projets de pipelines de données en temps réel, d'analyse statistique et de machine learning (Python, SQL, Spark). Parcours international (Hong Kong, Nanjing, Madrid). Objectif : aider à décider grâce à la donnée, par l'automatisation et le reporting.
+Étudiant ingénieur (4ème année) orienté data, avec une expérience concrète en pipelines de données temps réel, analyse statistique et machine learning (Python, SQL, ClickHouse, Spark). Parcours international (Hong Kong, Nanjing, Madrid). Objectif : accélérer la prise de décision grâce à l'ingénierie des données et au reporting BI haute performance.
 
 \secgap
 %-------------------- COMPETENCES --------------------
@@ -60,8 +60,8 @@
 \textbf{Programmation \& requêtage :} Python, SQL (optimisation de requêtes), ClickHouse, C, Java, HTML/CSS/JavaScript, MATLAB\\[2pt]
 \textbf{Analyse de données \& ML :} Pandas, NumPy, SciPy, Scikit-learn, PyTorch, deep learning (CNN, MLP), clustering, détection d'anomalies, modélisation statistique\\[2pt]
 \textbf{Data engineering :} ETL, Apache Spark (Structured Streaming, batch), Apache Kafka, Apache Airflow, Parquet, MySQL, modélisation relationnelle (MCD/MLD)\\[2pt]
-\textbf{Visualisation \& reporting :} Power BI, Matplotlib, Seaborn, Plotly, Excel\\[2pt]
-\textbf{Outils :} Git/GitHub, Docker, Linux, Jupyter, Django, Streamlit, Azure, API REST, UML
+\textbf{Visualisation \& reporting :} Power BI, Matplotlib, Seaborn, Plotly, Streamlit, Excel\\[2pt]
+\textbf{Outils :} Git/GitHub, Docker, Linux, Jupyter, Django, Azure, API REST, UML
 
 \secgap
 %-------------------- EXPERIENCE --------------------
@@ -69,9 +69,10 @@
 
 \job{Stagiaire Business Intelligence Developer}{3 nov. 2026 -- 2 avr. 2027 (En cours)}{Radisson Hotel Group -- Pulse by RHG}{Madrid, Espagne}
 \begin{itemize}
-  \item Optimisation de requêtes SQL sur ClickHouse pour Pulse, la plateforme BI de revenue management du groupe
-  \item Migration de données
-  \item Analyse des besoins métier derrière les données pour alimenter les tableaux de bord, dans une équipe internationale
+  \item Optimisation de 20+ procédures stockées ClickHouse critiques (scalar hoisting, PREWHERE pushdown, \texttt{multiIf} vectorisés, agrégations single-pass), réduisant nettement la RAM et les temps de calcul
+  \item Résolution de l'explosion de partitions via le dé-partitionnement systématique des tables clés, éliminant la saturation de ZooKeeper et accélérant les merges
+  \item Refonte du pipeline d'ingestion API en Python (\texttt{sds}), divisant par 10 les requêtes HTTP (-90\%) via le traitement par lot asynchrone et des mises à jour atomiques (\texttt{EXCHANGE TABLES})
+  \item Réduction de la dette technique (retrait de 25+ vues obsolètes) et intégration du suivi comparatif TY vs STLY (This Year vs Same Time Last Year) sur l'applicatif Pulse 3.0
 \end{itemize}
 
 \itemgap
