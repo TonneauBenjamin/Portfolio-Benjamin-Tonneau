@@ -252,6 +252,7 @@
   .p li:before{content:"";position:absolute;left:0;top:.72em;width:7px;height:1px;background:var(--blue)}
   .note{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:1px dashed var(--tag-border);padding:3px 7px;border-radius:2px;white-space:nowrap}
 
+  .p-actions{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;}
   .repo{
     display:inline-flex;align-items:center;gap:7px;flex:0 0 auto;
     font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;
@@ -260,6 +261,9 @@
   }
   .repo svg{width:14px;height:14px}
   .repo:hover{background:var(--ink);color:var(--on-ink);border-color:var(--ink);transform:translateY(-1px)}
+  .repo.demo{background:var(--blue);color:#fff;border-color:var(--blue)}
+  .repo.demo svg{stroke:currentColor}
+  .repo.demo:hover{background:var(--ink);color:var(--on-ink);border-color:var(--ink);transform:translateY(-1px)}
 
   /* the pipeline: each project really is a sequence, so it runs when you reach it */
   .pipe{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
@@ -499,7 +503,57 @@
 
     <div class="proj">
 
-      <!-- 1 -->
+      <!-- 3 -->
+      <article class="p">
+        <div class="p-head">
+          <div>
+            <h3 lang="en">Real-time fleet monitoring platform</h3>
+            <h3 lang="fr">Plateforme de streaming &amp; monitoring de flotte en temps réel</h3>
+            <p class="stack">Apache Kafka · Docker · Python · Streaming Data · Distributed Systems</p>
+          </div>
+          <div class="p-actions">
+            <a class="repo" href="https://github.com/TonneauBenjamin/fleet-capstone" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.1-.4-.6-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.1 0 4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+              <span>fleet-capstone</span>
+            </a>
+          </div>
+        </div>
+        <ul>
+          <li lang="en">Engineered an end-to-end distributed data streaming pipeline in Docker with a single Kafka broker running in KRaft mode, ingesting vehicle telemetry and delivery tracking across six Kafka topics.</li>
+          <li lang="en">Implemented simulated IoT event producers with anomaly injection, real-time message enrichment, and threshold alerts for engine telemetry, speed violations, and route compliance.</li>
+          <li lang="fr">Conception d'un pipeline complet de streaming de données sous Docker avec un broker Apache Kafka en mode KRaft, ingérant la télémétrie de véhicules sur six topics dédiés.</li>
+          <li lang="fr">Génération simulée d'événements IoT avec injection d'anomalies, enrichissement de flux en continu et alertes en temps réel sur les dépassements de vitesse et la santé moteur.</li>
+        </ul>
+      </article>
+
+      <!-- 4 -->
+      <article class="p">
+        <div class="p-head">
+          <div>
+            <h3 lang="en">The Resilient Racket — French tennis data story</h3>
+            <h3 lang="fr">La raquette résiliente — Data story du tennis français</h3>
+            <p class="stack">Streamlit · Python · Pandas · Plotly · INJEP Open Data</p>
+          </div>
+          <div class="p-actions">
+            <a class="repo demo" href="https://tennis-dashboard-tonneau-benjamin.streamlit.app/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <span lang="en">Live Demo</span><span lang="fr">Démo Live</span>
+            </a>
+            <a class="repo" href="https://github.com/TonneauBenjamin/tennis-dashboard" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.1-.4-.6-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.1 0 4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+              <span>tennis-dashboard</span>
+            </a>
+          </div>
+        </div>
+        <ul>
+          <li lang="en">Interactive Streamlit data story analyzing official INJEP census data (data.gouv.fr) covering millions of French tennis licenses from 2019 to 2023 through the COVID disruption.</li>
+          <li lang="en">Demographic and territorial analysis with dynamic choropleth maps, gender parity metrics, youth retention tracking, and interactive drill-downs per region.</li>
+          <li lang="fr">Data story interactive développée avec Streamlit sur les données de recensement de l'INJEP (data.gouv.fr), analysant l'évolution des licences de tennis de 2019 à 2023.</li>
+          <li lang="fr">Exploration territoriale et démographique approfondie : cartes choroplèthes, analyse de parité hommes/femmes, rétention des jeunes et filtres dynamiques par département.</li>
+        </ul>
+      </article>
+
+      <!-- 3 -->
       <article class="p">
         <div class="p-head">
           <div>
@@ -530,7 +584,7 @@
         </div>
       </article>
 
-      <!-- 2 -->
+      <!-- 4 -->
       <article class="p">
         <div class="p-head">
           <div>
@@ -560,7 +614,7 @@
         </div>
       </article>
 
-      <!-- 3 -->
+      <!-- 5 -->
       <article class="p">
         <div class="p-head">
           <div>
@@ -588,7 +642,7 @@
         </div>
       </article>
 
-      <!-- 3 -->
+      <!-- 5 -->
       <article class="p">
         <div class="p-head">
           <div>
@@ -615,7 +669,7 @@
         </div>
       </article>
 
-      <!-- 4 -->
+      <!-- 6 -->
       <article class="p">
         <div class="p-head">
           <div>
@@ -642,7 +696,7 @@
         </div>
       </article>
 
-      <!-- 5 -->
+      <!-- 7 -->
       <article class="p">
         <div class="p-head">
           <div>
@@ -667,7 +721,7 @@
         </div>
       </article>
 
-      <!-- 6 -->
+      <!-- 8 -->
       <article class="p">
         <div class="p-head">
           <div>
@@ -721,7 +775,7 @@
         </div>
       </article>
 
-      <!-- 7 -->
+      <!-- 9 -->
       <article class="p">
         <div class="p-head">
           <div>
@@ -746,7 +800,7 @@
         </div>
       </article>
 
-      <!-- 8 -->
+      <!-- 10 -->
       <article class="p">
         <div class="p-head">
           <div>
@@ -813,7 +867,7 @@
         <h3 lang="en">Data &amp; machine learning</h3><h3 lang="fr">Data &amp; machine learning</h3>
         <div class="tags">
           <span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Scikit-learn</span><span class="tag">PyTorch</span>
-          <span class="tag">ETL</span>
+          <span class="tag">ETL</span><span class="tag" lang="en">Event Streaming</span><span class="tag" lang="fr">Streaming de données</span>
           <span class="tag" lang="en">Relational design</span><span class="tag" lang="fr">Modélisation relationnelle</span>
           <span class="tag">MySQL</span><span class="tag">CNN / ResNet</span><span class="tag">Random Forest</span>
         </div>
@@ -822,7 +876,7 @@
       <div class="grp">
         <h3 lang="en">Tools &amp; platforms</h3><h3 lang="fr">Outils &amp; plateformes</h3>
         <div class="tags">
-          <span class="tag">Azure</span><span class="tag">Git / GitHub</span><span class="tag">Linux</span>
+          <span class="tag">Docker</span><span class="tag">Apache Kafka</span><span class="tag">Azure</span><span class="tag">Git / GitHub</span><span class="tag">Linux</span>
           <span class="tag">Excel</span>
           <span class="tag" lang="en">Agile</span><span class="tag" lang="fr">Méthodologie agile</span>
         </div>
