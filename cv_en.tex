@@ -1,11 +1,11 @@
 %-------------------------------------------------------------------
 % ATS-FRIENDLY CV - Benjamin Tonneau (English version)
 % Single column, ATS-readable text, no images or tables.
-% Compile with pdflatex. Layout: strictly one A4 page, balanced & breathable.
+% Compile with pdflatex. Layout: STRICTLY 1 A4 PAGE.
 %-------------------------------------------------------------------
 \documentclass[10pt,a4paper]{article}
 
-\usepackage[top=0.9cm,bottom=0.9cm,left=1.35cm,right=1.35cm]{geometry}
+\usepackage[top=0.8cm,bottom=0.8cm,left=1.35cm,right=1.35cm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \IfFileExists{lmodern.sty}{\usepackage{lmodern}}{}
@@ -16,36 +16,36 @@
 
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
-\linespread{1.02}
+\linespread{1.0}
 
-% Balanced section styling with proper breathing room below the rule
-\titleformat{\section}{\large\bfseries}{}{0em}{\MakeUppercase}[\vspace{2.5pt}\titlerule]
-\titlespacing*{\section}{0pt}{2pt}{4pt}
+% Section styling: crisp, uppercase, controlled spacing
+\titleformat{\section}{\large\bfseries}{}{0em}{\MakeUppercase}[\vspace{2pt}\titlerule]
+\titlespacing*{\section}{0pt}{4pt plus 1pt minus 1pt}{3pt}
 
-% Breathable bullet list spacing
-\setlist[itemize]{leftmargin=1.25em, itemsep=1.5pt, parsep=0pt, topsep=2pt, label=\textbullet}
+% Bullet list spacing
+\setlist[itemize]{leftmargin=1.25em, itemsep=0.8pt, parsep=0pt, topsep=1pt, label=\textbullet}
 
-% Harmonic elastic spacing (1.6 : 1 ratio between sections and items)
-\newcommand{\secgap}{\vspace{\stretch{1.0}}}
-\newcommand{\itemgap}{\vspace{\stretch{0.65}}}
+% Controlled vertical spacing (guarantees strict 1-page layout)
+\newcommand{\secgap}{\vspace{4.5pt plus 2pt minus 1pt}}
+\newcommand{\itemgap}{\vspace{2.5pt plus 1pt minus 0.5pt}}
 
 % \job{Title}{Dates}{Organization}{Location}
 \newcommand{\job}[4]{%
   \textbf{#1} \hfill #2\\
-  \textit{#3} \hfill \textit{#4}\par\vspace{1pt}
+  \textit{#3} \hfill \textit{#4}\par\vspace{0.5pt}
 }
 
 % \edu{Institution}{Dates}{Degree}{Location}
 \newcommand{\edu}[4]{%
   \textbf{#1} \hfill #2\\
-  \textit{#3} \hfill \textit{#4}\par\vspace{1pt}
+  \textit{#3} \hfill \textit{#4}\par\vspace{0.5pt}
 }
 
 \begin{document}
 
 %-------------------- HEADER --------------------
 \begin{center}
-  {\LARGE \textbf{Benjamin Tonneau}}\\[3.5pt]
+  {\LARGE \textbf{Benjamin Tonneau}}\\[3pt]
   Paris, France \,|\, \href{tel:+33745259906}{+33 7 45 25 99 06} \,|\, benjamintonneau@outlook.com \,|\, \href{https://tonneaubenjamin.github.io/Portfolio-Benjamin-Tonneau/}{Portfolio} \,|\, \href{https://linkedin.com/in/benjamin-tonneau}{LinkedIn} \,|\, \href{https://github.com/TonneauBenjamin}{GitHub}
 \end{center}
 
@@ -57,10 +57,10 @@ Engineering student (4th year) focused on data, with hands-on experience in real
 \secgap
 %-------------------- SKILLS --------------------
 \section{Skills}
-\textbf{Programming \& querying:} Python, SQL (query optimization), ClickHouse, C, Java, HTML/CSS/JavaScript, MATLAB\\[2.5pt]
-\textbf{Data analysis \& ML:} Pandas, NumPy, SciPy, Scikit-learn, PyTorch, deep learning (CNN, MLP), clustering, anomaly detection\\[2.5pt]
-\textbf{Data engineering:} ETL, Apache Spark (Structured Streaming, batch), Apache Kafka, Apache Airflow, Parquet, MySQL, relational modeling (ERD)\\[2.5pt]
-\textbf{Visualization \& reporting:} Power BI, Matplotlib, Seaborn, Plotly, Streamlit, Excel\\[2.5pt]
+\textbf{Programming \& querying:} Python, SQL (query optimization), ClickHouse, C, Java, HTML/CSS/JavaScript, MATLAB\\[1.8pt]
+\textbf{Data analysis \& ML:} Pandas, NumPy, SciPy, Scikit-learn, PyTorch, deep learning (CNN, MLP), clustering, anomaly detection\\[1.8pt]
+\textbf{Data engineering:} ETL, Apache Spark (Structured Streaming, batch), Apache Kafka, Apache Airflow, Parquet, MySQL, ERD\\[1.8pt]
+\textbf{Visualization \& reporting:} Power BI, Matplotlib, Seaborn, Plotly, Streamlit, Excel\\[1.8pt]
 \textbf{Tools:} Git/GitHub, Docker, Linux, Jupyter, Django, Azure, REST APIs, UML
 
 \secgap
@@ -77,15 +77,13 @@ Engineering student (4th year) focused on data, with hands-on experience in real
 \itemgap
 \job{Sales \& Operations Intern}{Jan -- Feb 2025}{Darty}{Paris, France}
 \begin{itemize}
-  \item Improved customer engagement through audio department merchandising and live product demonstrations
-  \item Analyzed sales trends to optimize the placement of high-turnover products during the holiday season
+  \item Merchandised audio department, ran live product demonstrations, and analyzed sales trends to optimize high-turnover products
 \end{itemize}
 
 \itemgap
 \job{Inventory \& Quality Control Intern}{June -- July 2024}{U Express}{Le Havre, France}
 \begin{itemize}
-  \item Matched incoming deliveries against purchase orders to keep stock records reliable
-  \item Audited stock and expiry dates daily to reduce food waste
+  \item Matched incoming deliveries against purchase orders to keep stock records reliable, and audited expiry dates daily
 \end{itemize}
 
 \secgap
@@ -93,9 +91,8 @@ Engineering student (4th year) focused on data, with hands-on experience in real
 \section{Education}
 
 \edu{EFREI Paris -- Panth\x27eon-Assas University}{Aug 2023 -- 2028 (Ongoing)}{Master of Engineering in Computer Science, Data Engineering specialization}{Paris, France}
-\begin{itemize}
-  \item Courses: Mathematics for ML, Data Analysis, Databases, Algorithms \& Data Structures
-\end{itemize}
+\vspace{-1.5pt}
+\textit{\small Relevant Coursework: Mathematics for ML, Data Analysis, Databases, Algorithms \& Data Structures}
 
 \itemgap
 \edu{Southeast University (SEU)}{Sept 2025 -- Dec 2025}{Exchange in English -- 17th worldwide in Computer Science \& Eng. (ARWU 2025)}{Nanjing, China}
@@ -109,7 +106,7 @@ Engineering student (4th year) focused on data, with hands-on experience in real
 
 \textbf{Real-time fleet tracking (Big Data capstone)} \hfill \textit{Kafka, Spark, Airflow, Docker}
 \begin{itemize}
-  \item Vehicle telemetry ingested into Kafka and processed with Spark Structured Streaming: invalid events, per-minute regional indicators, prolonged speeding detection
+  \item Vehicle telemetry ingested into Kafka and processed with Spark Structured Streaming: real-time alerts and KPI metrics
   \item Spark batch jobs on Parquet (quality checks, daily report, data skew), orchestrated with Airflow
 \end{itemize}
 
@@ -117,7 +114,7 @@ Engineering student (4th year) focused on data, with hands-on experience in real
 \textbf{Cybersecurity analysis pipeline (Mastercamp ANSSI)} \hfill \textit{Python, Scikit-learn, Django}
 \begin{itemize}
   \item CERT-FR (ANSSI) bulletins and CVEs enriched with CVSS and EPSS scores through the NVD and FIRST APIs
-  \item Random Forest, KMeans and Isolation Forest to prioritize vulnerabilities, with email alerts and a Django dashboard
+  \item ML models (Random Forest, KMeans, Isolation Forest) to prioritize vulnerabilities, with email alerts and Django dashboard
 \end{itemize}
 
 \itemgap
@@ -129,13 +126,13 @@ Engineering student (4th year) focused on data, with hands-on experience in real
 \itemgap
 \textbf{Deep learning models built from scratch} \hfill \textit{Python, NumPy, PyTorch}
 \begin{itemize}
-  \item MLP and CNN in NumPy and PyTorch (MNIST, CIFAR-10), then breast cancer detection (CBIS-DDSM)
+  \item MLP and CNN in NumPy and PyTorch (MNIST, CIFAR-10), then breast cancer detection on mammography scans (CBIS-DDSM)
 \end{itemize}
 
 \secgap
 %-------------------- LANGUAGES & INTERESTS --------------------
 \section{Languages \& Interests}
-\textbf{Languages:} French (native) \,|\, English (Fluent / C1) \,|\, Spanish (B1)\\[2.5pt]
+\textbf{Languages:} French (native) \,|\, English (Fluent / C1) \,|\, Spanish (B1)\\[1.8pt]
 \textbf{Interests:} Badminton (EFREI Sports Office, since 2023) \,|\, Tennis (5 years, recently resumed)
 
 \end{document}
