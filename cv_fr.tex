@@ -1,11 +1,11 @@
 %-------------------------------------------------------------------
 % CV COMPATIBLE ATS - Benjamin Tonneau (version francaise, mise a jour)
 % Colonne unique, texte lisible par les ATS, sans image/tableau.
-% Compilation avec pdflatex. Mise en page : strictement une page A4.
+% Compilation avec pdflatex. Mise en page : strictement une page A4 equilibree.
 %-------------------------------------------------------------------
 \documentclass[10pt,a4paper]{article}
 
-\usepackage[top=1.0cm,bottom=0.9cm,left=1.4cm,right=1.4cm]{geometry}
+\usepackage[top=0.9cm,bottom=0.9cm,left=1.35cm,right=1.35cm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \IfFileExists{lmodern.sty}{\usepackage{lmodern}}{}
@@ -19,33 +19,36 @@
 
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
-\linespread{1.0}
+\linespread{1.02}
 
-\titleformat{\section}{\large\bfseries}{}{0em}{\MakeUppercase}[\vspace{2pt}\titlerule]
-\titlespacing*{\section}{0pt}{1pt}{2.5pt}
+% Format de section : titre majuscule, separateur horizontal net et espacement equilibre
+\titleformat{\section}{\large\bfseries}{}{0em}{\MakeUppercase}[\vspace{2.5pt}\titlerule]
+\titlespacing*{\section}{0pt}{2pt}{4pt}
 
-\setlist[itemize]{leftmargin=1.3em, itemsep=1pt, parsep=0pt, topsep=1pt, label=\textbullet}
+% Espacement de listes aere et lisible
+\setlist[itemize]{leftmargin=1.25em, itemsep=1.5pt, parsep=0pt, topsep=2pt, label=\textbullet}
 
-\newcommand{\secgap}{\vspace{\stretch{1}}}
-\newcommand{\itemgap}{\vspace{\stretch{0.35}}}
+% Espacements elastiques harmonieux (ratio 1.6 : 1 pour un rythme vertical regulier)
+\newcommand{\secgap}{\vspace{\stretch{1.0}}}
+\newcommand{\itemgap}{\vspace{\stretch{0.65}}}
 
 % \job{Intitule}{Dates}{Organisation}{Lieu}
 \newcommand{\job}[4]{%
   \textbf{#1} \hfill #2\\
-  \textit{#3} \hfill \textit{#4}\par\vspace{0.5pt}
+  \textit{#3} \hfill \textit{#4}\par\vspace{1pt}
 }
 
 % \edu{Etablissement}{Dates}{Diplome}{Lieu}
 \newcommand{\edu}[4]{%
   \textbf{#1} \hfill #2\\
-  \textit{#3} \hfill \textit{#4}\par\vspace{0.5pt}
+  \textit{#3} \hfill \textit{#4}\par\vspace{1pt}
 }
 
 \begin{document}
 
 %-------------------- EN-TETE --------------------
 \begin{center}
-  {\LARGE \textbf{Benjamin Tonneau}}\\[3pt]
+  {\LARGE \textbf{Benjamin Tonneau}}\\[3.5pt]
   Paris, France \,|\, \href{tel:+33745259906}{+33 7 45 25 99 06} \,|\, benjamintonneau@outlook.com \,|\, \href{https://tonneaubenjamin.github.io/Portfolio-Benjamin-Tonneau/}{Portfolio} \,|\, \href{https://linkedin.com/in/benjamin-tonneau}{LinkedIn} \,|\, \href{https://github.com/TonneauBenjamin}{GitHub}
 \end{center}
 
@@ -57,10 +60,10 @@
 \secgap
 %-------------------- COMPETENCES --------------------
 \section{Compétences}
-\textbf{Programmation \& requêtage :} Python, SQL (optimisation de requêtes), ClickHouse, C, Java, HTML/CSS/JavaScript, MATLAB\\[2pt]
-\textbf{Analyse de données \& ML :} Pandas, NumPy, SciPy, Scikit-learn, PyTorch, deep learning (CNN, MLP), clustering, détection d'anomalies, modélisation statistique\\[2pt]
-\textbf{Data engineering :} ETL, Apache Spark (Structured Streaming, batch), Apache Kafka, Apache Airflow, Parquet, MySQL, modélisation relationnelle (MCD/MLD)\\[2pt]
-\textbf{Visualisation \& reporting :} Power BI, Matplotlib, Seaborn, Plotly, Streamlit, Excel\\[2pt]
+\textbf{Programmation \& requêtage :} Python, SQL (optimisation de requêtes), ClickHouse, C, Java, HTML/CSS/JavaScript, MATLAB\\[2.5pt]
+\textbf{Analyse de données \& ML :} Pandas, NumPy, SciPy, Scikit-learn, PyTorch, deep learning (CNN, MLP), clustering, détection d'anomalies\\[2.5pt]
+\textbf{Data engineering :} ETL, Apache Spark (Structured Streaming, batch), Apache Kafka, Apache Airflow, Parquet, MySQL, modélisation relationnelle (MCD/MLD)\\[2.5pt]
+\textbf{Visualisation \& reporting :} Power BI, Matplotlib, Seaborn, Plotly, Streamlit, Excel\\[2.5pt]
 \textbf{Outils :} Git/GitHub, Docker, Linux, Jupyter, Django, Azure, API REST, UML
 
 \secgap
@@ -135,7 +138,7 @@
 \secgap
 %-------------------- LANGUES & CENTRES D'INTERET --------------------
 \section{Langues \& Centres d'intérêt}
-\textbf{Langues :} Français (langue maternelle) \,|\, Anglais (Courant / C1) \,|\, Espagnol (B1)\\[2pt]
+\textbf{Langues :} Français (langue maternelle) \,|\, Anglais (Courant / C1) \,|\, Espagnol (B1)\\[2.5pt]
 \textbf{Centres d'intérêt :} Badminton (Bureau des Sports de l'EFREI, depuis 2023) \,|\, Tennis (5 ans, repris récemment)
 
 \end{document}
