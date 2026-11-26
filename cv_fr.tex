@@ -1,11 +1,11 @@
 %-------------------------------------------------------------------
 % CV COMPATIBLE ATS - Benjamin Tonneau (version francaise, mise a jour)
 % Colonne unique, texte lisible par les ATS, sans image/tableau.
-% Compilation avec pdflatex. Mise en page : strictement une page A4 equilibree.
+% Compilation avec pdflatex. Mise en page : STRICTEMENT 1 PAGE A4.
 %-------------------------------------------------------------------
 \documentclass[10pt,a4paper]{article}
 
-\usepackage[top=0.9cm,bottom=0.9cm,left=1.35cm,right=1.35cm]{geometry}
+\usepackage[top=0.8cm,bottom=0.8cm,left=1.35cm,right=1.35cm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \IfFileExists{lmodern.sty}{\usepackage{lmodern}}{}
@@ -19,36 +19,36 @@
 
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
-\linespread{1.02}
+\linespread{1.0}
 
-% Format de section : titre majuscule, separateur horizontal net et espacement equilibre
-\titleformat{\section}{\large\bfseries}{}{0em}{\MakeUppercase}[\vspace{2.5pt}\titlerule]
-\titlespacing*{\section}{0pt}{2pt}{4pt}
+% Titres de section : nets, majuscules, avec filet et espacements maitrises
+\titleformat{\section}{\large\bfseries}{}{0em}{\MakeUppercase}[\vspace{2pt}\titlerule]
+\titlespacing*{\section}{0pt}{4pt plus 1pt minus 1pt}{3pt}
 
-% Espacement de listes aere et lisible
-\setlist[itemize]{leftmargin=1.25em, itemsep=1.5pt, parsep=0pt, topsep=2pt, label=\textbullet}
+% Puces : compactes et aerées
+\setlist[itemize]{leftmargin=1.25em, itemsep=0.8pt, parsep=0pt, topsep=1pt, label=\textbullet}
 
-% Espacements elastiques harmonieux (ratio 1.6 : 1 pour un rythme vertical regulier)
-\newcommand{\secgap}{\vspace{\stretch{1.0}}}
-\newcommand{\itemgap}{\vspace{\stretch{0.65}}}
+% Espacements verticaux constants et reguliers (garantit le format 1 page)
+\newcommand{\secgap}{\vspace{4.5pt plus 2pt minus 1pt}}
+\newcommand{\itemgap}{\vspace{2.5pt plus 1pt minus 0.5pt}}
 
 % \job{Intitule}{Dates}{Organisation}{Lieu}
 \newcommand{\job}[4]{%
   \textbf{#1} \hfill #2\\
-  \textit{#3} \hfill \textit{#4}\par\vspace{1pt}
+  \textit{#3} \hfill \textit{#4}\par\vspace{0.5pt}
 }
 
 % \edu{Etablissement}{Dates}{Diplome}{Lieu}
 \newcommand{\edu}[4]{%
   \textbf{#1} \hfill #2\\
-  \textit{#3} \hfill \textit{#4}\par\vspace{1pt}
+  \textit{#3} \hfill \textit{#4}\par\vspace{0.5pt}
 }
 
 \begin{document}
 
 %-------------------- EN-TETE --------------------
 \begin{center}
-  {\LARGE \textbf{Benjamin Tonneau}}\\[3.5pt]
+  {\LARGE \textbf{Benjamin Tonneau}}\\[3pt]
   Paris, France \,|\, \href{tel:+33745259906}{+33 7 45 25 99 06} \,|\, benjamintonneau@outlook.com \,|\, \href{https://tonneaubenjamin.github.io/Portfolio-Benjamin-Tonneau/}{Portfolio} \,|\, \href{https://linkedin.com/in/benjamin-tonneau}{LinkedIn} \,|\, \href{https://github.com/TonneauBenjamin}{GitHub}
 \end{center}
 
@@ -60,10 +60,10 @@
 \secgap
 %-------------------- COMPETENCES --------------------
 \section{Compétences}
-\textbf{Programmation \& requêtage :} Python, SQL (optimisation de requêtes), ClickHouse, C, Java, HTML/CSS/JavaScript, MATLAB\\[2.5pt]
-\textbf{Analyse de données \& ML :} Pandas, NumPy, SciPy, Scikit-learn, PyTorch, deep learning (CNN, MLP), clustering, détection d'anomalies\\[2.5pt]
-\textbf{Data engineering :} ETL, Apache Spark (Structured Streaming, batch), Apache Kafka, Apache Airflow, Parquet, MySQL, modélisation relationnelle (MCD/MLD)\\[2.5pt]
-\textbf{Visualisation \& reporting :} Power BI, Matplotlib, Seaborn, Plotly, Streamlit, Excel\\[2.5pt]
+\textbf{Programmation \& requêtage :} Python, SQL (optimisation de requêtes), ClickHouse, C, Java, HTML/CSS/JavaScript, MATLAB\\[1.8pt]
+\textbf{Analyse de données \& ML :} Pandas, NumPy, SciPy, Scikit-learn, PyTorch, deep learning (CNN, MLP), clustering, détection d'anomalies\\[1.8pt]
+\textbf{Data engineering :} ETL, Apache Spark (Structured Streaming, batch), Apache Kafka, Apache Airflow, Parquet, MySQL, MCD/MLD\\[1.8pt]
+\textbf{Visualisation \& reporting :} Power BI, Matplotlib, Seaborn, Plotly, Streamlit, Excel\\[1.8pt]
 \textbf{Outils :} Git/GitHub, Docker, Linux, Jupyter, Django, Azure, API REST, UML
 
 \secgap
@@ -80,15 +80,13 @@
 \itemgap
 \job{Stagiaire Commercial \& Opérations}{Janv. -- Févr. 2025}{Darty}{Paris, France}
 \begin{itemize}
-  \item Amélioration de l'engagement client via la refonte du rayon audio et des démonstrations en direct
-  \item Analyse des tendances de ventes pour optimiser le positionnement des produits à forte rotation en période de fêtes
+  \item Merchandising du rayon audio, conseil client et analyse des tendances de ventes pour optimiser le positionnement des produits
 \end{itemize}
 
 \itemgap
 \job{Stagiaire Gestion des Stocks \& Contrôle Qualité}{Juin -- Juil. 2024}{U Express}{Le Havre, France}
 \begin{itemize}
-  \item Rapprochement des livraisons entrantes avec les bons de commande pour garantir la fiabilité des stocks
-  \item Audit quotidien des stocks et des dates limites pour réduire le gaspillage alimentaire
+  \item Rapprochement des livraisons entrantes avec les bons de commande et audit quotidien des stocks pour réduire le gaspillage
 \end{itemize}
 
 \secgap
@@ -96,9 +94,8 @@
 \section{Formation}
 
 \edu{EFREI Paris -- Université Panthéon-Assas}{Août 2023 -- 2028 (En cours)}{Diplôme d'ingénieur en informatique, spécialisation Data Engineering}{Paris, France}
-\begin{itemize}
-  \item Cours : Mathématiques pour le ML, Analyse de données, Bases de données, Algorithmique \& structures de données
-\end{itemize}
+\vspace{-1.5pt}
+\textit{\small Cours : Mathématiques pour le ML, Analyse de données, Bases de données, Algorithmique \& structures de données}
 
 \itemgap
 \edu{Southeast University (SEU)}{Sept. 2025 -- Déc. 2025}{Échange en anglais -- 17ème mondial en Computer Science \& Eng. (ARWU 2025)}{Nanjing, Chine}
@@ -112,7 +109,7 @@
 
 \textbf{Suivi de flotte en temps réel (capstone Big Data)} \hfill \textit{Kafka, Spark, Airflow, Docker}
 \begin{itemize}
-  \item Télémétrie de véhicules ingérée dans Kafka et traitée par Spark Structured Streaming : événements invalides, indicateurs régionaux à la minute, excès de vitesse prolongé
+  \item Télémétrie de véhicules ingérée dans Kafka et traitée par Spark Structured Streaming : alertes et indicateurs en temps réel
   \item Jobs batch Spark sur Parquet (contrôle qualité, rapport quotidien, data skew), orchestrés avec Airflow
 \end{itemize}
 
@@ -120,7 +117,7 @@
 \textbf{Pipeline d'analyse cybersécurité (Mastercamp ANSSI)} \hfill \textit{Python, Scikit-learn, Django}
 \begin{itemize}
   \item Bulletins CERT-FR (ANSSI) et CVE enrichis avec les scores CVSS et EPSS via les API NVD et FIRST
-  \item Random Forest, KMeans et Isolation Forest pour prioriser les vulnérabilités, alertes email et tableau de bord Django
+  \item Modèles ML (Random Forest, KMeans, Isolation Forest) pour prioriser les vulnérabilités, alertes et tableau de bord Django
 \end{itemize}
 
 \itemgap
@@ -132,13 +129,13 @@
 \itemgap
 \textbf{Modèles de deep learning codés from scratch} \hfill \textit{Python, NumPy, PyTorch}
 \begin{itemize}
-  \item MLP et CNN en NumPy et PyTorch (MNIST, CIFAR-10), puis cancer du sein sur mammographies (CBIS-DDSM)
+  \item MLP et CNN en NumPy et PyTorch (MNIST, CIFAR-10), puis détection du cancer du sein sur mammographies (CBIS-DDSM)
 \end{itemize}
 
 \secgap
 %-------------------- LANGUES & CENTRES D'INTERET --------------------
 \section{Langues \& Centres d'intérêt}
-\textbf{Langues :} Français (langue maternelle) \,|\, Anglais (Courant / C1) \,|\, Espagnol (B1)\\[2.5pt]
+\textbf{Langues :} Français (langue maternelle) \,|\, Anglais (Courant / C1) \,|\, Espagnol (B1)\\[1.8pt]
 \textbf{Centres d'intérêt :} Badminton (Bureau des Sports de l'EFREI, depuis 2023) \,|\, Tennis (5 ans, repris récemment)
 
 \end{document}
